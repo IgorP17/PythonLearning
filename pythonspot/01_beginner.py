@@ -6,7 +6,7 @@ Created on Fri Feb 15 21:40:41 2019
 """
 
 # Strings
-print ("# Strings") 
+print ("=== Strings")
 ## Чего нить напечатем
 s = "Just say hello world"
 print(s)
@@ -26,7 +26,7 @@ if (s1 != s2): print ("Compare s1 == s2 - false")
 
 ## Обращение к элементам строки
 s = "Мамба хуамба"
-print ("## Обращение к элементам строки")
+print ("== Обращение к элементам строки")
 print ("Строка = " + s)
 print ("Первый символ строки: " + s[0])
 print ("Второй символ строки: " + s[1])
