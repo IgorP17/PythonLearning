@@ -1,2 +1,2 @@
-name = input()
-print("Hello, ", name, "!", sep="")
+n = int(input())
+print(n // 10)
