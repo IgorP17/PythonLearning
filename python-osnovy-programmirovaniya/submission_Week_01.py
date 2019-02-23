@@ -1,7 +1,16 @@
-# n = int(input())
+n = int(input())
 
 # Электронные часы 2
-# print((n % 86400) // 3600, ":", (n % 86400) // 60, ":", (n % 86400) % 3600, sep="")
+# Если задали более суток вычленим
+# n = n % 86400
+# Часы
+# hh = n // 3600
+# Часы можно вычесть
+# n = n - hh * 3600
+# Минуты
+# mm = n // 60
+# n = n - mm * 60
+# print(hh, ":", str(mm).zfill(2), ":", str(n).zfill(2), sep="")
 
 # вторая цифра
 # print((n % 100) // 10)
@@ -43,3 +52,17 @@
 # b = int(input())
 # result = a > b
 # print(a * result + b * (1 - result))
+
+# Улитка вверх днем, вниз ночью
+# height = int(input())
+# distUp = int(input())
+# distDown = int(input())
+# u = height - distUp
+# d = distUp - distDown
+# result = 1 + (u + d - 1) // d
+# print(result)
+
+# Следующее четное число
+# n = int(input())
+# n1 = (n + 2) if n % 2 == 0 else (n + 1)
+# print(n1)
