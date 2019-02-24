@@ -1,13 +1,9 @@
-n = int(input())
-
-# Электронные часы 2
-# Если задали более суток вычленим
-n = n % 86400
-# Часы
-hh = n // 3600
-# Часы можно вычесть
-n = n - hh * 3600
-# Минуты
-mm = n // 60
-n = n - mm * 60
-print(hh, ":", str(mm).zfill(2), ":", str(n).zfill(2), sep="")
+# Ход короля
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+if abs(x1 - x2) == 1 or abs(y1 - y2) == 1:
+    print("YES")
+else:
+    print("NO")
