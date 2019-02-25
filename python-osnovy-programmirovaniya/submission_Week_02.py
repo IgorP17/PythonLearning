@@ -116,10 +116,23 @@
 #     print("NO")
 
 # Совпадение чисел
-n1 = int(input())
-n2 = int(input())
-n3 = int(input())
-eq = 0
-if n1 == n2 and n2 == n3:
-    eq = 3
+# n1 = int(input())
+# n2 = int(input())
+# n3 = int(input())
+# eq = 0
+# if n1 == n2 and n2 == n3:
+#     eq = 3
+# elif n1 == n2 and n1 != n3:
+#     eq = 2
+# elif n1 == n3 and n1 != n2:
+#     eq = 2
+# elif n2 == n3 and n2 != n1:
+#     eq = 2
+# print(eq)
 
+# Мороженое продают по 3 и по 5 шариков, можно ли купить k шариков WRONG
+n = int(input())
+if n % 3 == 0 or n % 5 == 0 or n % 8 == 0:
+    print("YES")
+else:
+    print("NO")
