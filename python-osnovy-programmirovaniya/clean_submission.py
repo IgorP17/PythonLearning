@@ -1,6 +1,18 @@
-# Мороженое продают по 3 и по 5 шариков, можно ли купить k шариков
 n = int(input())
-if n % 3 == 0 or n % 5 == 0 or n % 8 == 0:
-    print("YES")
+if 10 < n < 20:
+    if n % 10 == 0:
+        print(n, "korov")
+    if n % 10 == 5:
+        print(n, "korov")
+    if n % 10 == 6:
+        print(n, "korov")
+    if n % 10 == 7:
+        print(n, "korov")
+    if n % 10 == 8:
+        print(n, "korov")
+    if n % 10 == 9:
+        print(n, "korov")
+elif n % 10 == 1:
+    print(n, "korova")
 else:
-    print("NO")
+    print(n, "korovy")

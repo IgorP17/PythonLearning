@@ -130,9 +130,56 @@
 #     eq = 2
 # print(eq)
 
-# Мороженое продают по 3 и по 5 шариков, можно ли купить k шариков WRONG
+# Мороженое продают по 3 и по 5 шариков, можно ли купить k шариков
+# n = int(input())
+# n2 = n
+# result = 0
+# while n > 0:
+#     if n % 3 == 0:
+#         result = 1
+#         break
+#     else:
+#         n = n - 5
+# n = n2
+# if result == 0:
+#     while n > 0:
+#         if n % 5 == 0:
+#             result = 1
+#             break
+#         else:
+#             n = n - 3
+# print("YES" if result == 1 else "NO")
+
+# Упорядочить 3 числа
+# a, b, c = int(input()), int(input()), int(input())
+# while a > b or b > c:
+#     if a > b:
+#         (a, b) = (b, a)
+#     if b > c:
+#         (b, c) = (c, b)
+# print(a, b, c, sep=" ")
+
+# N КОРОВ
+# Здесь собраны правила склонения слова "корова" (n < 100).
+#
+#     "n коров", если 10 < n < 20 или последняя цифра n - одна из 0, 5, 6, 7, 8, 9.
+#     "n корова", если последняя цифра n == 1.
+#     "n коровы" во всех остальных случаях.
 n = int(input())
-if n % 3 == 0 or n % 5 == 0 or n % 8 == 0:
-    print("YES")
+if 10 < n < 20:
+    if n % 10 == 0:
+        print(n, "korov")
+    if n % 10 == 5:
+        print(n, "korov")
+    if n % 10 == 6:
+        print(n, "korov")
+    if n % 10 == 7:
+        print(n, "korov")
+    if n % 10 == 8:
+        print(n, "korov")
+    if n % 10 == 9:
+        print(n, "korov")
+elif n % 10 == 1:
+    print(n, "korova")
 else:
-    print("NO")
+    print(n, "korovy")
