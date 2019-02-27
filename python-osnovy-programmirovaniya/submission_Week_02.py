@@ -165,21 +165,46 @@
 #     "n коров", если 10 < n < 20 или последняя цифра n - одна из 0, 5, 6, 7, 8, 9.
 #     "n корова", если последняя цифра n == 1.
 #     "n коровы" во всех остальных случаях.
-n = int(input())
-if 10 < n < 20:
-    if n % 10 == 0:
-        print(n, "korov")
-    if n % 10 == 5:
-        print(n, "korov")
-    if n % 10 == 6:
-        print(n, "korov")
-    if n % 10 == 7:
-        print(n, "korov")
-    if n % 10 == 8:
-        print(n, "korov")
-    if n % 10 == 9:
-        print(n, "korov")
-elif n % 10 == 1:
-    print(n, "korova")
+# n = int(input())
+# if 10 < n < 20:
+#     print(n, "korov")
+# elif n % 10 == 0:
+#     print(n, "korov")
+# elif n % 10 == 5:
+#     print(n, "korov")
+# elif n % 10 == 6:
+#     print(n, "korov")
+# elif n % 10 == 7:
+#     print(n, "korov")
+# elif n % 10 == 8:
+#     print(n, "korov")
+# elif n % 10 == 9:
+#     print(n, "korov")
+# elif n % 10 == 1:
+#     print(n, "korova")
+# else:
+#     print(n, "korovy")
+
+# За многие годы заточения узник замка Иф проделал в стене прямоугольное отверстие размером D×E.
+# Замок Иф сложен из кирпичей, размером A×B×C.
+# Определите, сможет ли узник выбрасывать кирпичи в море через это отверстие
+# (очевидно, стороны кирпича должны быть параллельны сторонам отверстия).
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+e = int(input())
+if a <= d and b <= e:
+    print("YES")
+elif b <= d and a <= e:
+    print("YES")
+elif a <= d and c <= e:
+    print("YES")
+elif c <= d and a <= e:
+    print("YES")
+elif c <= d and b <= e:
+    print("YES")
+elif b <= d and c <= e:
+    print("YES")
 else:
-    print(n, "korovy")
+    print("NO")
