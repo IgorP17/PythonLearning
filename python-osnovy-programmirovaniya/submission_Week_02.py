@@ -189,22 +189,59 @@
 # Замок Иф сложен из кирпичей, размером A×B×C.
 # Определите, сможет ли узник выбрасывать кирпичи в море через это отверстие
 # (очевидно, стороны кирпича должны быть параллельны сторонам отверстия).
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-e = int(input())
-if a <= d and b <= e:
-    print("YES")
-elif b <= d and a <= e:
-    print("YES")
-elif a <= d and c <= e:
-    print("YES")
-elif c <= d and a <= e:
-    print("YES")
-elif c <= d and b <= e:
-    print("YES")
-elif b <= d and c <= e:
-    print("YES")
-else:
-    print("NO")
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# d = int(input())
+# e = int(input())
+# if a <= d and b <= e:
+#     print("YES")
+# elif b <= d and a <= e:
+#     print("YES")
+# elif a <= d and c <= e:
+#     print("YES")
+# elif c <= d and a <= e:
+#     print("YES")
+# elif c <= d and b <= e:
+#     print("YES")
+# elif b <= d and c <= e:
+#     print("YES")
+# else:
+#     print("NO")
+
+# По данному целому числу N распечатайте все квадраты натуральных чисел,не превосходящие N, в порядке возрастания.
+# n = int(input())
+# i = 1
+# s = ""
+# while i ** 2 <= n:
+#     s = s + str(i ** 2) + " "
+#     i += 1
+# print(s)
+
+# Дано целое число, не меньшее 2. Выведите его наименьший натуральный делитель, отличный от 1.
+# n = int(input())
+# i = 2
+# while n % i != 0:
+#     i += 1
+# print(i)
+
+# В первый день спортсмен пробежал X километров,
+# а затем он каждый день увеличивал пробег на 10% от предыдущего значения
+# (для решения задачи разрешается использовать числа с запятой, которые в Питоне пишутся через точку).
+# По данному числу X определите номер дня, на который пробег спортсмена составит не менее Y километров.
+# x = int(input())
+# y = int(input())
+# days = 1
+# while y > x:
+#     days += 1
+#     x += x / 10
+# print(days)
+
+# Последовательность состоит из целых чисел и завершается числом 0.
+# Определите значение наибольшего элемента последовательности.
+maxi = n = int(input())
+while n != 0:
+    n = int(input())
+    if maxi < n != 0:
+        maxi = n
+print(maxi)
