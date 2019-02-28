@@ -1,6 +1,8 @@
-maxi = n = int(input())
-while n != 0:
+counter = 0
+while 1 == 1:
     n = int(input())
-    if maxi < n != 0:
-        maxi = n
-print(maxi)
+    if n == 0:
+        break
+    elif n % 2 == 0:
+        counter += 1
+print(counter)
