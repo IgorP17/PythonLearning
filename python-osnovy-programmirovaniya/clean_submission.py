@@ -1,8 +1,10 @@
-counter = 0
-while 1 == 1:
+max1 = n = int(input())
+counter = 1
+while n != 0:
     n = int(input())
-    if n == 0:
-        break
-    elif n % 2 == 0:
+    if n > max1:
+        counter = 1
+        max1 = n
+    elif n == max1:
         counter += 1
 print(counter)
