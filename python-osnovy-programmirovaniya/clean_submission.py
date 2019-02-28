@@ -1,10 +1,15 @@
-max1 = n = int(input())
+n = int(input())
+value = n
 counter = 1
+max1 = 1
 while n != 0:
     n = int(input())
-    if n > max1:
-        counter = 1
-        max1 = n
-    elif n == max1:
+    if n == value:
         counter += 1
-print(counter)
+        if counter > max1:
+            max1 = counter
+        # counter <
+    else:
+        value = n
+        counter = 1
+print(max1)
