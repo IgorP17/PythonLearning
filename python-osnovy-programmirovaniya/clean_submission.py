@@ -1,7 +1,5 @@
-# Вещественные числа
-a = float(input())
-b = float(input())
-c = float(input())
-p = (a + b + c) / 2
-s = (p * (p - a) * (p - b) * (p - c)) ** 0.5
-print(s)
+import math
+s = float(input())
+r = math.floor(s)
+k = math.ceil((s - r) * 100)
+print(r, "{:02d}".format(k))
