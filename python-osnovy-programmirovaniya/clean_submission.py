@@ -1,11 +1,9 @@
 
 
-def min4(a1, b1, c1, d1):
-    return min(a1, b1, c1, d1)
+def isPointInSquare(x1, y1):
+    return -1.0 <= x1 <= 1.0, -1.0 <= y1 <= 1.0
 
 
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-print(min4(a, b, c, d))
+x = float(input())
+y = float(input())
+print("YES" if str(isPointInSquare(x, y)) == "(True, True)" else "NO")
