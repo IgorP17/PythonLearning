@@ -1,14 +1,14 @@
 
 
-def MinDivisor(n):
-    k = int(n ** 0.5) + 1
+def isPrime(n_f):
+    k = int(n_f ** 0.5) + 1
     i = 2
     while i < k:
-        if n % i == 0:
-            return i
+        if n_f % i == 0:
+            return "NO"
         i += 1
-    return n
+    return "YES"
 
 
 n = int(input())
-print(MinDivisor(n))
+print(isPrime(n))
