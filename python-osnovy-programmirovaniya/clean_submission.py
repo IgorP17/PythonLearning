@@ -1,9 +1,14 @@
 
 
-def isPointInSquare(x1, y1):
-    return -1.0 <= x1 <= 1.0, -1.0 <= y1 <= 1.0
+def MinDivisor(n):
+    k = int(n ** 0.5) + 1
+    i = 2
+    while i < k:
+        if n % i == 0:
+            return i
+        i += 1
+    return n
 
 
-x = float(input())
-y = float(input())
-print("YES" if str(isPointInSquare(x, y)) == "(True, True)" else "NO")
+n = int(input())
+print(MinDivisor(n))

@@ -42,12 +42,56 @@
 # Основная программа должна считать координаты точки,
 # вызвать функцию IsPointInSquare и в зависимости от возвращенного значения вывести на экран необходимое сообщение.
 # Функция IsPointInSquare не должна содержать инструкцию if.
+#
+#
+# def isPointInSquare(x1, y1):
+#     return -1.0 <= x1 <= 1.0, -1.0 <= y1 <= 1.0
+#
+#
+# x = float(input())
+# y = float(input())
+# print("YES" if str(isPointInSquare(x, y)) == "(True, True)" else "NO")
+
+# Даны пять действительных чисел: x, y, xc, yc, r.
+# Проверьте, принадлежит ли точка (x,y) кругу с центром (xc, yc) и радиусом r.
+# Если точка принадлежит кругу, выведите слово YES, иначе выведите слово NO.
+# Решение должно содержать функцию IsPointInCircle(x, y, xc, yc, r),
+# возвращающую True, если точка принадлежит кругу и False, если не принадлежит.
+# Основная программа должна считать координаты точки, вызвать функцию IsPointInCircle
+# и в зависимости от возвращенного значения вывести на экран необходимое сообщение.
+# Функция IsPointInCircle не должна содержать инструкцию if.
+#
+#
+# def IsPointInCircle(x, y, xc, yc, r):
+#     return (x - xc) ** 2 + (y - yc) ** 2 <= r ** 2
+#
+#
+# x = float(input())
+# y = float(input())
+# xc = float(input())
+# yc = float(input())
+# r = float(input())
+# print("YES" if str(IsPointInCircle(x, y, xc, yc, r)) == "True" else "NO")
+
+# Дано натуральное число n>1.
+# Выведите его наименьший делитель, отличный от 1.
+# Решение оформите в виде функции MinDivisor(n).
+# Алгоритм должен иметь сложность порядка корня квадратного из n.
+# Указание. Если у числа n нет делителя не превосходящего корня из n,
+# то число n — простое и ответом будет само число n.
+# А у всех составных чисел обязательно есть делители,
+# отличные от единицы и не превосходящие корня из n.
 
 
-def isPointInSquare(x1, y1):
-    return -1.0 <= x1 <= 1.0, -1.0 <= y1 <= 1.0
+def MinDivisor(n):
+    k = int(n ** 0.5) + 1
+    i = 2
+    while i < k:
+        if n % i == 0:
+            return i
+        i += 1
+    return n
 
 
-x = float(input())
-y = float(input())
-print("YES" if str(isPointInSquare(x, y)) == "(True, True)" else "NO")
+n = int(input())
+print(MinDivisor(n))
