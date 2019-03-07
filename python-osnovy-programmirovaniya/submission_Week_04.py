@@ -105,17 +105,40 @@
 # количество действий в программе должно быть пропорционально квадратному корню из n
 # (иначе говоря, при увеличении входного числа в k раз,
 # время выполнения программы должно увеличиваться примерно в корень из k раз).
+#
+#
+# def isPrime(n_f):
+#     k = int(n_f ** 0.5) + 1
+#     i = 2
+#     while i < k:
+#         if n_f % i == 0:
+#             return "NO"
+#         i += 1
+#     return "YES"
+#
+#
+# n = int(input())
+# print(isPrime(n))
+
+# Дано действительное положительное число a и целое неотрицательное число n.
+# Вычислите aⁿ, не используя циклы и стандартную функцию pow, но используя рекуррентное соотношение aⁿ=a⋅aⁿ⁻¹.
+# Решение оформите в виде функции power(a, n) (которая возвращает aⁿ).
 
 
-def isPrime(n_f):
-    k = int(n_f ** 0.5) + 1
-    i = 2
-    while i < k:
-        if n_f % i == 0:
-            return "NO"
-        i += 1
-    return "YES"
+def power(a1, n1):
+    if n1 == 0:
+        return 1
+    if n1 == 1:
+        if a1 - int(a1) == 0.0:
+            return int(a1)
+        return a1
+    else:
+        result = a1 * power(a1, n1 - 1)
+        if result - int(result) == 0.0:
+            result = int(result)
+        return result
 
 
+a = float(input())
 n = int(input())
-print(isPrime(n))
+print(power(a, n))

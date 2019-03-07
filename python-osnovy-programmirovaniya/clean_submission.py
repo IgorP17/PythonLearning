@@ -1,14 +1,19 @@
 
 
-def isPrime(n_f):
-    k = int(n_f ** 0.5) + 1
-    i = 2
-    while i < k:
-        if n_f % i == 0:
-            return "NO"
-        i += 1
-    return "YES"
+def power(a1, n1):
+    if n1 == 0:
+        return 1
+    if n1 == 1:
+        if a1 - int(a1) == 0.0:
+            return int(a1)
+        return a1
+    else:
+        result = a1 * power(a1, n1 - 1)
+        if result - int(result) == 0.0:
+            result = int(result)
+        return result
 
 
+a = float(input())
 n = int(input())
-print(isPrime(n))
+print(power(a, n))
