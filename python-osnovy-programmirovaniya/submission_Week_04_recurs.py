@@ -149,12 +149,86 @@
 # Также нельзя использовать циклы.
 
 
-def adds(a1, b1):
-    if a1 == 0:
-        return b1
-    return adds(a1 - 1, b1 + 1)
+# def adds(a1, b1):
+#     if a1 == 0:
+#         return b1
+#     return adds(a1 - 1, b1 + 1)
+#
+#
+# a = int(input())
+# b = int(input())
+# print(adds(a, b))
+
+# Возводить в степень можно гораздо быстрее, чем за n умножений!
+# Для этого нужно воспользоваться следующими рекуррентными соотношениями:
+# aⁿ = (a²)ⁿ/² при четном n,
+# aⁿ=a⋅aⁿ⁻¹ при нечетном n.
+# Реализуйте алгоритм быстрого возведения в степень.
+# Если вы все сделаете правильно,то сложность вашего алгоритма будет O(logn).
 
 
-a = int(input())
-b = int(input())
-print(adds(a, b))
+# def fast_power(a1, n1):
+#     if n1 == 0:
+#         return 1
+#     if n1 % 2 == 0:
+#         res = (a1 ** 2) ** (n1 // 2)
+#         if res - int(res) == 0.0:
+#             res = int(res)
+#         return res
+#     else:
+#         res = a1 * fast_power(a1, n1 - 1)
+#         if res - int(res) == 0.0:
+#             res = int(res)
+#         return res
+#
+#
+# a = float(input())
+# n = int(input())
+# print(fast_power(a, n))
+#
+
+# Даны два натуральных числа n и m.
+# Сократите дробь (n / m), то есть выведите два других числа p и q таких,
+# что (n / m) = (p / q) и дробь (p / q) — несократимая.
+# Решение оформите в виде функции ReduceFraction(n, m),
+# получающая значения n и m и возвращающей кортеж из двух чисел: return p, q.
+
+# import math
+#
+#
+# def reduce_fraction(n, m):
+#     k = math.gcd(n, m)
+#     return n // k, m // k
+#
+#
+# n1, m1 = reduce_fraction(int(input()), int(input()))
+# print(n1, m1)
+
+# Дана последовательность чисел, завершающаяся числом 0.
+# Найдите сумму всех этих чисел, не используя цикл.
+#
+#
+# def sum_of():
+#     i = int(input())
+#     if i == 0:
+#         return i
+#     else:
+#         return i + sum_of()
+#
+#
+# print(sum_of())
+
+# Дана последовательность целых чисел, заканчивающаяся числом 0.
+# Выведите эту последовательность в обратном порядке.
+
+
+def revers():
+    n = int(input())
+    if n != 0:
+        revers()
+        print(n)
+    else:
+        print(n)
+
+
+revers()
