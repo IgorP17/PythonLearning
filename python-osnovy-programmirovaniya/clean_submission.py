@@ -1,13 +1,6 @@
-# Выведите эту последовательность в обратном порядке.
-
-
-def revers():
-    n = int(input())
-    if n != 0:
-        revers()
-        print(n)
-    else:
-        print(n)
-
-
-revers()
+inList = list(map(int, input().split()))
+mn = 1001
+for i in range(len(inList)):
+    if 0 < inList[i] < mn:
+        mn = inList[i]
+print(mn)
