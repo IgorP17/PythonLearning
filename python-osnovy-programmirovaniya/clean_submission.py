@@ -1,13 +1,18 @@
-inList = list(map(int, input().split()))
-mmin = mmax = inList[0]
-min_idx = max_idx = 0
-for i in range(len(inList)):
-    if inList[i] >= mmax:
-        mmax = inList[i]
-        max_idx = i
-    elif inList[i] <= mmin:
-        mmin = inList[i]
-        min_idx = i
-inList[min_idx] = mmax
-inList[max_idx] = mmin
-print(' '.join(map(str, inList)))
+inList1 = list(map(int, input().split()))
+inList2 = list(map(int, input().split()))
+
+
+def merge(a, b):
+    result = a + b
+    return sort(result)
+
+
+def sort(z):
+    for i in range(len(z) - 1):
+        for j in range(i, len(z)):
+            if z[i] >= z[j]:
+                z[i], z[j] = z[j], z[i]
+    return z
+
+
+print(' '.join(map(str, merge(inList1, inList2))))
