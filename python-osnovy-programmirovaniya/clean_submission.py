@@ -1,25 +1,13 @@
-inList1 = list(map(int, input().split()))
-inList2 = list(map(int, input().split()))
-
-
-def merge(a, b):
-    c = []
-    i, j = 0, 0
-    for k in range(len(a) + len(b)):
-        if i < len(a) and j < len(b):
-            if a[i] < b[j]:
-                c.append(a[i])
-                i += 1
-            else:
-                c.append(b[j])
-                j += 1
-        elif i < len(a):
-            c.append(a[i])
-            i += 1
-        elif j < len(b):
-            c.append(b[j])
-            j += 1
-    return c
-
-
-print(' '.join(map(str, merge(inList1, inList2))))
+inListSizeUsers = list(map(int, input().split()))
+size = inListSizeUsers[0]
+n = inListSizeUsers[1]
+u = []
+for i in range(n):
+    u.append(int(input()))
+u.sort()
+tt = 0
+i = 0
+while n != 0 and tt + u[i] < size:
+    tt += u[i]
+    i += 1
+print(i)
