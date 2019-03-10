@@ -1,6 +1,13 @@
 inList = list(map(int, input().split()))
-mn = 1001
+mmin = mmax = inList[0]
+min_idx = max_idx = 0
 for i in range(len(inList)):
-    if 0 < inList[i] < mn:
-        mn = inList[i]
-print(mn)
+    if inList[i] >= mmax:
+        mmax = inList[i]
+        max_idx = i
+    elif inList[i] <= mmin:
+        mmin = inList[i]
+        min_idx = i
+inList[min_idx] = mmax
+inList[max_idx] = mmin
+print(' '.join(map(str, inList)))
