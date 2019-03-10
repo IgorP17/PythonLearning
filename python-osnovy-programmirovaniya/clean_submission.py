@@ -3,16 +3,23 @@ inList2 = list(map(int, input().split()))
 
 
 def merge(a, b):
-    result = a + b
-    return sort(result)
-
-
-def sort(z):
-    for i in range(len(z) - 1):
-        for j in range(i, len(z)):
-            if z[i] >= z[j]:
-                z[i], z[j] = z[j], z[i]
-    return z
+    c = []
+    i, j = 0, 0
+    for k in range(len(a) + len(b)):
+        if i < len(a) and j < len(b):
+            if a[i] < b[j]:
+                c.append(a[i])
+                i += 1
+            else:
+                c.append(b[j])
+                j += 1
+        elif i < len(a):
+            c.append(a[i])
+            i += 1
+        elif j < len(b):
+            c.append(b[j])
+            j += 1
+    return c
 
 
 print(' '.join(map(str, merge(inList1, inList2))))
