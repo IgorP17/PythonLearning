@@ -53,16 +53,17 @@
 # Каждая строка представляет собой набор чисел, разделенных пробелами.
 # После каждой строки с вопросом идет ответ Августа: YES или NO.
 # Наконец, последняя строка входных данных содержит одно слово HELP.
-n = int(input())
-inSet = set([])
-outSet = set([])
-str1 = input()
-while str1 != 'HELP':
-    answer = input()
-    if answer == 'YES':
-        inSet = inSet | set(map(int, str1.split()))
-    else:
-        outSet = outSet | set(map(int, str1.split()))
-    str1 = input()
-print(*inSet)
-print(*outSet)
+# n = int(input())
+# allNum = set(range(1, n + 1))
+# while True:
+#     quest = input()
+#     if quest == 'HELP':
+#         break
+#     quest = {int(x) for x in quest.split()}
+#     answer = input()
+#     if answer == 'YES':
+#         allNum &= quest
+#     if answer == 'NO':
+#         allNum -= quest
+# print(' '.join([str(x) for x in sorted(allNum)]))
+
