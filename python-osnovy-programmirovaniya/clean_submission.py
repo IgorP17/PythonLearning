@@ -1,37 +1,32 @@
-n = int(input())
-np = list(map(int, input().split()))
-# Здесь создали 3-е поле для номера бомбоубежища
-for i in range(n):
-    np[i] = [np[i], i + 1, 0]
-np.sort()
+myInput = open("input.txt", "r", encoding="utf8")
+myOutput = open("output.txt", "w", encoding="utf8")
+k = int(myInput.readline())
+myList = []
+for line in myInput:
+    newLine = line.split()
+    if int(newLine[-1]) >= 40 and int(newLine[-2]) >= 40 \
+            and int(newLine[-3]) >= 40:
+        myList.append(newLine)
+myInput.close()
+myList.sort(key=lambda a: int(a[-1]) + int(a[-2]) + int(a[-3]))
+myList.reverse()
+konk = []
+for i in myList:
+    mySum = int(i[-1]) + int(i[-2]) + int(i[-3])
+    konk.append(mySum)
+n = len(konk)
 
-m = int(input())
-bu = list(map(int, input().split()))
-for i in range(m):
-    bu[i] = [bu[i], i + 1]
-bu.sort()
 
-# Переменная для начала вложенного цикла
-start = 0
-for i in range(n):
-    # Точка нахождения нужного бомбоубежища
-    idx = 0
-    # Чтобы минимум был точно больше любого найденного
-    minimum = 10e10
-    for j in range(start, m):
-        tmp = abs(np[i][0] - bu[j][0])
-        # Либо обновляем минимум и номер бомбоубежища
-        if tmp < minimum:
-            idx = j
-            minimum = tmp
-            np[i][2] = bu[j][1]
-        # Либо заканчиваем цикл
-        else:
-            break
-    # Переопределяем начало вложенного цикла
-    start = idx
+def konkurs(n1, k1, konk1):
+    if n1 <= k1:
+        return 0
+    elif konk1[k1] == konk1[0]:
+        return 1
+    for i in range(k1, 0, -1):
+        if konk1[i] < konk1[i - 1]:
+            return konk1[i - 1]
 
-np.sort(key=lambda indx: indx[1])
-# print(*np)
-for i in range(len(np)):
-    print(np[i][2], end=" ")
+
+print(konkurs(n, k, konk), file=myOutput)
+myInput.close()
+myOutput.close()

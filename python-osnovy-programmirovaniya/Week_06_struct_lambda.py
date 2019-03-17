@@ -102,3 +102,91 @@
 # # print(*np)
 # for i in range(len(np)):
 #     print(np[i][2], end=" ")
+
+# Чтение/ запись
+# inFile = open('input.txt', 'r', encoding='utf8')
+# outFile = open('output.txt', 'w', encoding='utf8')
+# for line in inFile:
+#     print(line[-2::-1], file=outFile)
+# inFile.close()
+# outFile.close()
+
+# Известно, что фамилии всех участников — различны.
+# Сохраните в массивах список всех участников и выведите его,
+# отсортировав по фамилии в лексикографическом порядке.
+# При выводе указываете фамилию, имя участника и его балл.
+# inFile = open('input.txt', 'r', encoding='utf8')
+# lst = []
+# for line in inFile:
+#     lst.append(line.split())
+# inFile.close()
+# lst.sort()
+# for i in lst:
+#     print(i[0], i[1], i[3], sep=' ')
+
+# Сортировка подсчетом. Отсортируйте этот список в порядке неубывания элементов. Выведите полученный список.
+#
+#
+# def CountSort(A):
+#     counts = [0 for i in range(101)]
+#     for i in A:
+#         counts[i] += 1
+#     k = 0
+#     for i in range(101):
+#         for j in range(counts[i]):
+#             A[k] = i
+#             k += 1
+#     return A
+#
+#
+# lst = list(map(int, input().split()))
+# print(' '.join(map(str, CountSort(lst))))
+
+# В олимпиаде участвовало N человек.
+# Каждый получил определенное количество баллов, при этом оказалось,
+# что у всех участников разное число баллов.
+# Упорядочите список участников олимпиады в порядке убывания набранных баллов.
+# n = int(input())
+# lst = []
+# for i in range(n):
+#     line = input().split()
+#     lst.append([int(line[1]), line[0]])
+# lst.sort(reverse=True)
+# # for i in range(len(lst)):
+# #     print(lst[i][1])
+# print(*lst)
+
+
+#
+myInput = open("input.txt", "r", encoding="utf8")
+myOutput = open("output.txt", "w", encoding="utf8")
+k = int(myInput.readline())
+myList = []
+for line in myInput:
+    newLine = line.split()
+    if int(newLine[-1]) >= 40 and int(newLine[-2]) >= 40 \
+            and int(newLine[-3]) >= 40:
+        myList.append(newLine)
+myInput.close()
+myList.sort(key=lambda a: int(a[-1]) + int(a[-2]) + int(a[-3]))
+myList.reverse()
+konk = []
+for i in myList:
+    sum = int(i[-1]) + int(i[-2]) + int(i[-3])
+    konk.append(sum)
+n = len(konk)
+
+
+def konkurs(n, k, konk):
+    if n <= k:
+        return 0
+    elif konk[k] == konk[0]:
+        return 1
+    for i in range(k, 0, -1):
+        if konk[i] < konk[i - 1]:
+            return konk[i - 1]
+
+
+print(konkurs(n, k, konk), file=myOutput)
+myInput.close()
+myOutput.close()
