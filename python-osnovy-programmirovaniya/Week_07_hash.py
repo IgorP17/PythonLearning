@@ -67,3 +67,30 @@
 #         allNum -= quest
 # print(' '.join([str(x) for x in sorted(allNum)]))
 
+# Каждый из N школьников некоторой школы знает Mᵢ языков.
+# Определите, какие языки знают все школьники и языки, которые знает хотя бы один из школьников.
+# INPUT:
+# 3
+# 3
+# Russian
+# English
+# Japanese
+# 2
+# Russian
+# English
+# 1
+# English
+union = set()
+allLang = set()
+for i in range(int(input())):
+    m = int(input())
+    a = {input() for j in range(m)}
+    allLang.update(a)
+    if i == 1:
+        union.update(a)
+    else:
+        union &= a
+print(len(union))
+print('\n'.join(sorted(union)))
+print(len(allLang))
+print('\n'.join(sorted(allLang)))
