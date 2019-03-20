@@ -98,15 +98,17 @@
 # На Новом проспекте для разгрузки было решено пустить два новых автобусных маршрута на разных участках проспекта.
 # Известны конечные остановки каждого из автобусов.
 # Определите количество остановок, на которых можно пересесть с одного автобуса на другой.
-inList = list(map(int, input().split()))
-if inList[0] > inList[1]:
-    (inList[0], inList[1]) = (inList[1], inList[0])
-if inList[2] > inList[3]:
-    (inList[2], inList[3]) = (inList[3], inList[2])
-# множество
-bus1 = set(range(inList[0], inList[1] + 1))
-bus2 = set(range(inList[2], inList[3] + 1))
-# print(*bus1)
-# print(*bus2)
-res = bus1 & bus2
-print(len(res))
+# inList = list(map(int, input().split()))
+# if inList[0] > inList[1]:
+#     (inList[0], inList[1]) = (inList[1], inList[0])
+# if inList[2] > inList[3]:
+#     (inList[2], inList[3]) = (inList[3], inList[2])
+# # множество
+# bus1 = set(range(inList[0], inList[1] + 1))
+# bus2 = set(range(inList[2], inList[3] + 1))
+# # print(*bus1)
+# # print(*bus2)
+# res = bus1 & bus2
+# print(len(res))
+
+#
