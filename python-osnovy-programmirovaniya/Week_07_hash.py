@@ -80,17 +80,33 @@
 # English
 # 1
 # English
-union = set()
-allLang = set()
-for i in range(int(input())):
-    m = int(input())
-    a = {input() for j in range(m)}
-    allLang.update(a)
-    if i == 1:
-        union.update(a)
-    else:
-        union &= a
-print(len(union))
-print('\n'.join(sorted(union)))
-print(len(allLang))
-print('\n'.join(sorted(allLang)))
+# union = set()
+# allLang = set()
+# for i in range(int(input())):
+#     m = int(input())
+#     a = {input() for j in range(m)}
+#     allLang.update(a)
+#     if i == 1:
+#         union.update(a)
+#     else:
+#         union &= a
+# print(len(union))
+# print('\n'.join(sorted(union)))
+# print(len(allLang))
+# print('\n'.join(sorted(allLang)))
+
+# На Новом проспекте для разгрузки было решено пустить два новых автобусных маршрута на разных участках проспекта.
+# Известны конечные остановки каждого из автобусов.
+# Определите количество остановок, на которых можно пересесть с одного автобуса на другой.
+inList = list(map(int, input().split()))
+if inList[0] > inList[1]:
+    (inList[0], inList[1]) = (inList[1], inList[0])
+if inList[2] > inList[3]:
+    (inList[2], inList[3]) = (inList[3], inList[2])
+# множество
+bus1 = set(range(inList[0], inList[1] + 1))
+bus2 = set(range(inList[2], inList[3] + 1))
+# print(*bus1)
+# print(*bus2)
+res = bus1 & bus2
+print(len(res))
