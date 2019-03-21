@@ -111,4 +111,54 @@
 # res = bus1 & bus2
 # print(len(res))
 
-#
+# Словарь
+# in
+# 3
+# apple - malum, pomum, popula
+# fruit - baca, bacca, popum
+# punishment - malum, multa
+# out
+# 7
+# baca - fruit
+# bacca - fruit
+# malum - apple, punishment
+# multa - punishment
+# pomum - apple
+# popula - apple
+# popum - fruit
+# n = int(input())
+# latinEnglish = {}
+# for i in range(n):
+#     line = input()
+#     english = line[:line.find('-')].strip()
+#     latinsStr = line[line.find('-') + 1:].strip()
+#     latins = map(lambda s: s.strip(), latinsStr.split(','))
+#     for latin in latins:
+#         if latin not in latinEnglish:
+#             latinEnglish[latin] = []
+#         latinEnglish[latin].append(english)
+# print(len(latinEnglish))
+# for latin in sorted(latinEnglish):
+#     print(latin, '-', ', '.join(sorted(latinEnglish[latin])))
+
+# Во входном файле (вы можете читать данные из файла input.txt) записан текст.
+# Словом считается последовательность непробельных подряд идущих символов.
+# Слова разделены одним или большим числом пробелов или символами конца строки.
+# Для каждого слова из этого текста подсчитайте, сколько раз оно встречалось в этом тексте ранее.
+# inFile = open("input.txt", "r", encoding="utf8")
+# reader = inFile.read().split()
+# words = dict({})
+# occurs = []
+# for word in reader:
+#     # если слово уже встречалось
+#     if word in words:
+#         # обновим значение словаря
+#         words[word] += 1
+#         # добавим значение в наблюдаемое
+#         occurs.append(words[word])
+#     # иначе надо занести
+#     else:
+#         words[word] = 0
+#         # и добавить в наблюдаемое
+#         occurs.append(0)
+# print(*occurs)

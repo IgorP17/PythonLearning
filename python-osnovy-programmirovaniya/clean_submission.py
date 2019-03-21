@@ -1,12 +1,17 @@
-inList = list(map(int, input().split()))
-if inList[0] > inList[1]:
-    (inList[0], inList[1]) = (inList[1], inList[0])
-if inList[2] > inList[3]:
-    (inList[2], inList[3]) = (inList[3], inList[2])
-# множество
-bus1 = set(range(inList[0], inList[1] + 1))
-bus2 = set(range(inList[2], inList[3] + 1))
-# print(*bus1)
-# print(*bus2)
-res = bus1 & bus2
-print(len(res))
+inFile = open("input.txt", "r", encoding="utf8")
+reader = inFile.read().split()
+words = dict({})
+occurs = []
+for word in reader:
+    # если слово уже встречалось
+    if word in words:
+        # обновим значение словаря
+        words[word] += 1
+        # добавим значение в наблюдаемое
+        occurs.append(words[word])
+    # иначе надо занести
+    else:
+        words[word] = 0
+        # и добавить в наблюдаемое
+        occurs.append(0)
+print(*occurs)
