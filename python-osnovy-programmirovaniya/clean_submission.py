@@ -1,17 +1,14 @@
-inFile = open("input.txt", "r", encoding="utf8")
-reader = inFile.read().split()
-words = dict({})
-occurs = []
-for word in reader:
-    # если слово уже встречалось
-    if word in words:
-        # обновим значение словаря
-        words[word] += 1
-        # добавим значение в наблюдаемое
-        occurs.append(words[word])
-    # иначе надо занести
-    else:
-        words[word] = 0
-        # и добавить в наблюдаемое
-        occurs.append(0)
-print(*occurs)
+n = int(input())
+fwrd = dict({})
+bkwrd = dict({})
+for i in range(n):
+    (a, b) = input().split()
+    fwrd[a] = b
+    bkwrd[b] = a
+kword = input()
+# ищем в прямом словаре
+if kword in fwrd:
+    print(fwrd[kword])
+# иначе ищем в обратном
+elif kword in bkwrd:
+    print(bkwrd[kword])

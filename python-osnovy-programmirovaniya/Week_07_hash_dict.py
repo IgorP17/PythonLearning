@@ -162,3 +162,27 @@
 #         # и добавить в наблюдаемое
 #         occurs.append(0)
 # print(*occurs)
+
+# Вам дан словарь, состоящий из пар слов.
+# Каждое слово является синонимом к парному ему слову.
+# Все слова в словаре различны. Для одного данного слова определите его синоним.
+# 3
+# Hello Hi
+# Bye Goodbye
+# List Array
+# Goodbye
+# Кю - может быть задание не правой, а левой части
+n = int(input())
+fwrd = dict({})
+bkwrd = dict({})
+for i in range(n):
+    (a, b) = input().split()
+    fwrd[a] = b
+    bkwrd[b] = a
+kword = input()
+# ищем в прямом словаре
+if kword in fwrd:
+    print(fwrd[kword])
+# иначе ищем в обратном
+elif kword in bkwrd:
+    print(bkwrd[kword])
