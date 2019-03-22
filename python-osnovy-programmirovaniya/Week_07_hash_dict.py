@@ -172,17 +172,77 @@
 # List Array
 # Goodbye
 # Кю - может быть задание не правой, а левой части
-n = int(input())
-fwrd = dict({})
-bkwrd = dict({})
-for i in range(n):
-    (a, b) = input().split()
-    fwrd[a] = b
-    bkwrd[b] = a
-kword = input()
-# ищем в прямом словаре
-if kword in fwrd:
-    print(fwrd[kword])
-# иначе ищем в обратном
-elif kword in bkwrd:
-    print(bkwrd[kword])
+# n = int(input())
+# fwrd = dict({})
+# bkwrd = dict({})
+# for i in range(n):
+#     (a, b) = input().split()
+#     fwrd[a] = b
+#     bkwrd[b] = a
+# kword = input()
+# # ищем в прямом словаре
+# if kword in fwrd:
+#     print(fwrd[kword])
+# # иначе ищем в обратном
+# elif kword in bkwrd:
+#     print(bkwrd[kword])
+
+# Дан текст. Выведите слово, которое в этом тексте встречается чаще всего.
+# Если таких слов несколько, выведите то, которое меньше в лексикографическом порядке.
+# oh you touch my tralala mmm my ding ding dong
+# Вывод программы:
+# ding
+# import sys
+#
+# txt = sys.stdin.read()
+# lst = str(txt).split()
+# myDict = dict({})
+# # идем по словам
+# for i in lst:
+#     # если слово встречалось
+#     if i in myDict:
+#         myDict[i] += 1
+#     # а если нет, то заведем
+#     else:
+#         myDict[i] = 1
+# # добавим в список в обратном порядке ключ значение
+# revLst = []
+# for i in myDict:
+#     revLst.append((myDict[i], i))
+# revLst.sort(reverse=True)
+# cnt = revLst[0][0]
+# word = revLst[0][1]
+# for i in range(len(revLst)):
+#     if revLst[i][0] >= cnt and revLst[i][1] < word:
+#         word = revLst[i][1]
+# print(word)
+
+# Дан текст. Выведите все слова, встречающиеся в тексте, по одному на каждую строку.
+# Слова должны быть отсортированы по убыванию их количества появления в тексте,
+# а при одинаковой частоте появления — в лексикографическом порядке.
+import sys
+
+txt = sys.stdin.read()
+lst = str(txt).split()
+myDict = dict({})
+# идем по словам
+for i in lst:
+    # если слово встречалось
+    if i in myDict:
+        myDict[i] += 1
+    # а если нет, то заведем
+    else:
+        myDict[i] = 1
+# добавим в список в обратном порядке ключ значение
+revLst = []
+for i in myDict:
+    revLst.append((myDict[i], i))
+revLst.sort(reverse=True)
+cnt = revLst[0][0]
+word = revLst[0][1]
+for i in range(len(revLst)):
+    if revLst[i][0] >= cnt and revLst[i][1] < word:
+        word = revLst[i][1]
+print(word)
+
+
