@@ -234,15 +234,11 @@ for i in lst:
     else:
         myDict[i] = 1
 # добавим в список в обратном порядке ключ значение
-revLst = []
+lst = []
 for i in myDict:
-    revLst.append((myDict[i], i))
-revLst.sort(reverse=True)
-cnt = revLst[0][0]
-word = revLst[0][1]
-for i in range(len(revLst)):
-    if revLst[i][0] >= cnt and revLst[i][1] < word:
-        word = revLst[i][1]
-print(word)
-
+    lst.append((myDict[i], i))
+# магия лямбды
+lst.sort(key=lambda word: (-word[0], word[1]))
+for i in lst:
+    print(i[1])
 
