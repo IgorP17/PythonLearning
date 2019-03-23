@@ -35,3 +35,18 @@
 # Проверьте, есть ли среди данных N чисел нули.
 # print(True in set(map(lambda x: int(input()) == 0, range(int(input())))))
 
+# На вход подаётся последовательность натуральных чисел длины n≤1000.
+# Посчитайте произведение пятых степеней чисел в последовательности.
+# import functools
+#
+# print(
+#     functools.reduce(
+#         lambda a, b: a * b,
+#         map(
+#             lambda p5: p5 ** 5,
+#             map(int, input().split()))
+#     )
+# )
+
+# Булева функция XOR
+print(' '.join(map(lambda a, b: str(int(a != b)), input().split(), input().split())))

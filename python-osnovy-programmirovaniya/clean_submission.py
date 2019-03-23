@@ -1,1 +1,1 @@
-print(True in set(map(lambda x: int(input()) == 0, range(int(input())))))
+print(' '.join(map(lambda a, b: str(int(a != b)), input().split(), input().split())))
