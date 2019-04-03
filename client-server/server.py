@@ -22,13 +22,14 @@ def process_request(conn, addr):
             print(data.decode("utf8"))
 
 
-with socket.socket() as sock:
-    sock.bind(("127.0.0.1", 10001))
-    sock.listen(3)
-    workers_count = 3
-    workers_list = [multiprocessing.Process(target=worker, args=(sock,))
-                    for _ in range(workers_count)]
-    for w in workers_list:
-        w.start()
-    for w in workers_list:
-        w.join()
+if __name__ == '__main__':
+    with socket.socket() as sock:
+        sock.bind(("127.0.0.1", 10001))
+        sock.listen(socket.SOMAXCONN)
+        workers_count = 3
+        workers_list = [multiprocessing.Process(target=worker, args=(sock,))
+                        for _ in range(workers_count)]
+        for w in workers_list:
+            w.start()
+        for w in workers_list:
+            w.join()
